@@ -26,17 +26,17 @@ This project uses **Linear Regression** to model the relationship between a stud
 
 ## 📊 Usage
 
-1.Clone this repository
+1. Clone this repository
 
-`git clone https://github.com/your-username/student-score-predictor.git`
-`cd student-score-predictor`
+- `git clone https://github.com/your-username/student-score-predictor.git`
+- `cd student-score-predictor`
 
 
-2.Run the model
+2. Run the model
 
 `python model.py`
 
-3.(Optional) View results in the notebook
-Open `notebook/analysis.ipynb`
+3. (Optional) View results in the notebook
+ - Open `notebook/analysis.ipynb`
 
 
