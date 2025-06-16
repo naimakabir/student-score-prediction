@@ -13,7 +13,7 @@ print(df.columns)
 data = df[['Hours_Studied', 'Attendance', 'Exam_Score']]
 
 # Check for missing values
-print("Missing values:\n", data.isnull().sum())
+print("\nMissing values:\n", data.isnull().sum())
 
 print("\nStatistics insight:\n", data.describe())
 
@@ -32,7 +32,7 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
 # Evaluation
-print("Mean Squared Error:", mean_squared_error(y_test, y_pred))
+print("\nMean Squared Error:", mean_squared_error(y_test, y_pred))
 print("R² Score:", r2_score(y_test, y_pred))
 
 # Function for predicting student's exam score
@@ -47,10 +47,17 @@ def predict_score(hours_studied, attendance):
                              columns=['Hours_Studied', 'Attendance'])
   
     prediction = model.predict(input_data)
-    return f"Predicted exam score: {prediction[0]:.1f}%"
+    return f"Predicted exam score: {prediction[0]:.1f}"
 
 # Example 
 print("\nExample Predictions:")
 print(predict_score(20, 85))
 print(predict_score(30, 95))
 print(predict_score(10, 70))  
+
+# Plotting actual vs predicted
+plt.scatter(y_test, y_pred, color='blue')
+plt.xlabel("Actual Exam Score")
+plt.ylabel("Predicted Exam Score")
+plt.title("Actual vs Predicted Exam Scores")
+plt.show()
